@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<h1>text vs utext</h1>
+<ul>
+    <li>th:text <span th:text="${data}"></span></li>
+    <li>th:utext <span th:text="${data}"></span></li>
+</ul>
+<h1><span th:inline="none">[[...]] vs [(...)]</span></h1>
+<ul>
+    <li><span th:inline="none">[[...]]</span>[[${data}]]</li>
+    <li><span th:inline="none">[(...)]</span>[(${data})]</li>
+<!--
+여기서 th:inline="none"은 타임리프는 [[...]] 을 해석하기때문에 화면에 [[...]] 글자를 보여줄수없다 이태그안에서는 타임리프가 해석하지말라는 옵션이다
+-->
+</ul>
+</body>
+</html>

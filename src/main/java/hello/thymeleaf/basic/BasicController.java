@@ -1,6 +1,8 @@
 package hello.thymeleaf.basic;
 
 import lombok.Data;
+
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +12,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import jakarta.servlet.http.HttpSession;
+
 
 @Controller
 @RequestMapping("/basic")
@@ -46,6 +52,22 @@ public class BasicController {
         model.addAttribute("userMap", map);
         return "basic/variable";
     }
+
+    @GetMapping("basic-objects")
+    public String basicObjectes(HttpSession session) {
+        session.setAttribute("sessionData", "Hello Session");
+        return "basic/basic-objects";
+    }
+    
+
+
+    @Component("helloBean")
+    static class helloBean {
+        public String hello(String data) {
+            return "Hello " + data;
+        }
+    }
+
 
     @Data
     static class User {

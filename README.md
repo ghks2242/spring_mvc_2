@@ -113,3 +113,25 @@ th:with 을 사용하면 지역변수를 선언하여 사용할수있다 지역�
     <div th:with="first=${users[0]}">
     <p>처음 사람 이름은 <span th:text="${first.username}"></span></p>
     </div>
+
+
+--- 
+## 기본객체들
+타임리프는 기본 객체들을 제공한다.
+* ${#request}
+* ${#response}
+* ${#session}
+* ${#servletContext}
+* ${#locale}
+그런데 #request 는 HttpServletRequest 객체가 그대로 제공되기 떄문에 데이터를 조회하려면 
+request.getParameter("data") 처럼 불편하게 접근해야한다.
+
+## thymeleaf-3.1.x부터는 보안성과 명확성을 위해 위 객체들을 Expression Utility Object (#request, #session, 등)로 직접 접근할 수 없게 되었습니다
+
+이런 점을 해결하기 위한 편의 객체도 제공한다.
+* HTTP 요청 파라미터 접근 param
+    * ex) ${param.paramData}
+* HTTP 세션 접근 session
+    * ex) ${session.sessionData}
+* 스프링 빈 접근 @
+    * ex) ${@helloBean.hello('Spring!')}

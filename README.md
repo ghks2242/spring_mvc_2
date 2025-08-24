@@ -156,3 +156,13 @@ request.getParameter("data") 처럼 불편하게 접근해야한다.
 * Elvis 연산자 조건식의 편의버전
 * No-Operation : '_' 인 경우 마치 타임리프가 실행되지 않은 것 처럼 동작한다 이것을 잘사용하면 HTML 의 내용 그대로 활용할수있다 마지막예를보면 데이터가 없습니다. 부분이 그대로 출력된다.
 
+
+### 속성설정
+속성추가
+* th:attrappend: 속성값을 추가한다.
+* th:attrprepend: 속성값을 앞에 추가한다.
+* th:classaeppend: 클래스 속성에 자연스럽게 추가한다.
+
+checked 처리
+HTML 에서는 checked 라는 속성이 있기때문에 있으면 true 이든 false 이든 그냥 체크가 되어버린다
+타임리프에서 th:checked 는 false 인경우 속성자체를 제거한다.

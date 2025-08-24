@@ -68,6 +68,15 @@ public class BasicController {
     }
 
 
+    @GetMapping("/link")
+    public String link(Model model) {
+        model.addAttribute("param1", "date1");
+        model.addAttribute("param2", "date2");
+        return "basic/link";
+    }
+
+
+
     @Component("helloBean")
     static class helloBean {
         public String hello(String data) {

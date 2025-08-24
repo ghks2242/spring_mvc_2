@@ -135,3 +135,24 @@ request.getParameter("data") 처럼 불편하게 접근해야한다.
     * ex) ${session.sessionData}
 * 스프링 빈 접근 @
     * ex) ${@helloBean.hello('Spring!')}
+
+
+### LocalDateTime 
+자바 8 이상부터 사용가능하다 이거를 사용하기위해서는 따로 라이브러리를 등록해야하지만 스프링부트에서는 타임리프를 등록하면 자동으로 같이등록된다.
+
+### 리터럴
+리터럴을 사용할때는 꼭 '' 를 사용해야한다
+    
+    ex) 
+        <li>'hello world!' = <span th:text="'hello world!'"></span></li>
+    위에 문법은 잘작동한다
+        <li>'hello world!' = <span th:text="hello world!"></span></li>
+    이문법은 작동을 안한다
+
+### 연산자
+* 비교연산 : html 엔티티를 사용해야하는 부분을 주의하자.
+  * `> (gt), < (lt), >= (ge), <= (le), ! (not), == (eq), != (neq , ne)`
+* 조건식 : 자바의 조건식과 유사
+* Elvis 연산자 조건식의 편의버전
+* No-Operation : '_' 인 경우 마치 타임리프가 실행되지 않은 것 처럼 동작한다 이것을 잘사용하면 HTML 의 내용 그대로 활용할수있다 마지막예를보면 데이터가 없습니다. 부분이 그대로 출력된다.
+

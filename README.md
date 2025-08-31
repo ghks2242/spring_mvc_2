@@ -166,3 +166,18 @@ request.getParameter("data") 처럼 불편하게 접근해야한다.
 checked 처리
 HTML 에서는 checked 라는 속성이 있기때문에 있으면 true 이든 false 이든 그냥 체크가 되어버린다
 타임리프에서 th:checked 는 false 인경우 속성자체를 제거한다.
+
+### 반복
+th:each 로 반복을 할수있다
+<tr th:each="user, userStat : ${users}">
+
+* 첫번째 파라미터에는 변수
+* 두번째 파라미터에는 현재 이 컬렉션에 대한 루프 상태를 알려준다 
+* 두번째 파라미터는 생략이 가능하며 생략하면 지정한 변수명 + Stat 가 됩니다
+
+#### 반복 상태 유지가능
+* index : 0 부터 시작하는값
+* count : 1 부터 시작하는값
+* even, odd : 홀수 , 짝수 여부 (boolean)
+* first, last : 처음, 마지막 여부 (boolean)
+* current : 현재 객체

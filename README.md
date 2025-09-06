@@ -217,4 +217,10 @@ th:block 은 HTML 태그가 아닌 타임리프의 유일한 자체태그이다.
   * 인라인 사용전 -> var username = /*userA*/ "test username";
   * 인라인 사용후 -> var username = "userA";
 * 객체
-  * 타임리프의 자바스크립트 인라인 기능을 사용하면 객체를 JSON 으로 변환해준다.
+  * 인라인 사용전 -> toString 으로 호출
+  * 인라인 사용후 -> JSON 으로 변경해준다
+* each 문법시
+
+  `[# th:each="user, stat : ${users}"]
+  var user[[${stat.count}]] = [[${user}]]
+  [/]`

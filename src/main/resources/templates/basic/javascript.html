@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<!-- 자바스크립트 인라인 사용전 -->
+<script type="javascript">
+    var username = "[[${user.username}]]"
+    var age = [[${user.age}]]
+
+    // 자바스크립트 내추럴 템플릿
+    var username2 = /*[[${user.username}]]*/ "test username";
+
+    // 객체
+    var user = [[${user}]]
+    // 이렇게하게되면 user 객체의 toString 이 호출된다
+</script>
+
+
+<!-- 자바스크립트 인라인 사용 후 -->
+<script th:inline="javascript">
+    // 문자열은 자동으로 따옴표 처리 + 이스케이프
+    var username = [[${user.username}]];
+    // 숫자는 숫자 리터럴로
+    var age = [[${user.age}]];
+
+    // 내추럴 템플릿: 인라인 모드에서만 치환됨
+    var username2 = /*[[${user.username}]]*/ "test username";
+
+    // 객체: JS 리터럴(JSON 유사)로 직렬화
+    var user = [[${user}]];
+</script>
+
+  </body>
+  </html>

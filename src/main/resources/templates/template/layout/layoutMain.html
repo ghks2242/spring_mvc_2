@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+                                                            <!-- 여기 ::title 부분에 <title>메인 타이틀</title> 태그가 통째로 들어가버린다 -->
+                                                            <!-- 마찬가지로 ::link 부분에 link 태그가 통째로 들어가버린다 -->
+<head th:replace="~{template/layout/base :: common_header(~{::title}, ~{::link})}">
+    <title>메인 타이틀</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/themes/smoothness/jquery-ui.css}">
+</head>
+<body>
+메인컨텐츠
+</body>
+</html>

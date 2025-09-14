@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org" th:replace="~{template/layoutExtend/layoutFile :: layout (~{::title}, ~{::section})}">
+<!-- 여기 ::title 부분에 <title>메인 타이틀</title> 태그가 통째로 들어가버린다 -->
+<!-- 마찬가지로 ::section 부분에 section 태그가 통째로 들어가버린다 -->
+<head>
+    <title>메인 페이지 타이틀</title>
+</head>
+<body>
+<section>
+    <p>메인 페이지 컨텐츠</p>
+    <div>메인 페이지 포함 내용</div>
+</section>
+</body>
+</html>

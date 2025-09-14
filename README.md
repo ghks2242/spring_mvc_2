@@ -230,4 +230,12 @@ th:block 은 HTML 태그가 아닌 타임리프의 유일한 자체태그이다.
 웹페이지를 개발할 때 에는 공통영역이 많이 있다. 예를들어서 상단 영역이나 하단 영역, 좌측 카테고리 등등 여러 페이지에서 함께 사용하는 영역들이있다.
 이런 부분을 코드를 복사해서 사용한다면 변경시 여러 페이지를 다 수정해야 하므로 상당히 비효율 적이다.
 타임리프는 이러한 문제를 해결하기위해 템플릿 조각과 레이아웃 기능을 지원한다.
-[fragmentMain.html](src/main/resources/templates/template/fragment/)
+[fragmentMain.html](src/main/resources/templates/template/fragment/fragmentMain.html)
+[footer.html](src/main/resources/templates/template/fragment/footer.html)
+
+
+## 템플릿 레이아웃
+이전에는 일부 코드 조각을 가지고와서 사용했다면 이번에는 개념을 더 확장해서 코드 조각을 레이아웃에 넘겨서 사용하는 방법이다
+* common_header(~{::title}, ~{::link}) 이부분이 핵심이다
+  * ::title 은 현재 페이지의 title 태그를 전달한다.
+  * ::link 는 현재 페이지의 Link 태그들을 전달한다.

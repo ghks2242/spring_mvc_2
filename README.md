@@ -239,3 +239,7 @@ th:block 은 HTML 태그가 아닌 타임리프의 유일한 자체태그이다.
 * common_header(~{::title}, ~{::link}) 이부분이 핵심이다
   * ::title 은 현재 페이지의 title 태그를 전달한다.
   * ::link 는 현재 페이지의 Link 태그들을 전달한다.
+
+---
+# 정리
+
